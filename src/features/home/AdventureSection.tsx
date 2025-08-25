@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const AdventureSection = () => {
   const cards = [
     {
@@ -21,15 +23,27 @@ const AdventureSection = () => {
   ];
 
   return (
-    <section className="w-full  py-10">
+    <section className="w-full py-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
         {cards.map((card, index) => (
-          <AdventureCard
+          <motion.div
             key={index}
-            image={card.image}
-            title={card.title}
-            subtitle={card.subtitle}
-          />
+            initial={{ opacity: 0, y: 150 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.3,
+              type: "spring",
+              stiffness: 120,
+              damping: 18,
+            }}
+          >
+            <AdventureCard
+              image={card.image}
+              title={card.title}
+              subtitle={card.subtitle}
+            />
+          </motion.div>
         ))}
       </div>
     </section>
@@ -49,13 +63,16 @@ const AdventureCard = ({
 }) => {
   return (
     <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden rounded-2xl group">
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 transition duration-500 group-hover:bg-black/60"></div>
 
+      {/* Border Effect */}
       <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/70 rounded-2xl transition-all duration-500"></div>
 
       {/* Text */}

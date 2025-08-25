@@ -99,10 +99,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-.font-2 {
-  font-family: "Kaushan Script", cursive;
-}
-
 @layer base {
   button {
     @apply cursor-pointer;
@@ -119,6 +115,11 @@
   body {
     @apply font-normal;
     font-family: "Noto Kufi Arabic", sans-serif;
+  }
+
+  .font-2 {
+    font-family: "Kaushan Script", cursive;
+    @apply font-normal;
   }
 }
 

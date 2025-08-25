@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Logo & About */}
         <div>
-          <h2 className="text-2xl font-bold text-white">Our journey</h2>
+          <h2 className="text-2xl font-bold text-white font-2">Our journey</h2>
           <p className="mt-3 text-sm">
             Discover adventures, explore new places, and enjoy unforgettable
             journeys with us.

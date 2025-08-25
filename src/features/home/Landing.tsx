@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./style/landing.css";
-import Header from "@/components/shared/Header/Header";
 import { useState } from "react";
+import Header from "@/components/shared/header";
 
 export default function Landing() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,7 +34,7 @@ export default function Landing() {
         style={{ backgroundImage: "url(/Hero/Hero-1.jpg)" }}
         className="h-[80vh] w-full"
       >
-        <Header schangebackground={" #f3f4f6"} />
+        <Header />
         <Swiper
           navigation={true}
           modules={[Navigation]}
